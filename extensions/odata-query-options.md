@@ -3,9 +3,9 @@
 Introduction
 ============
 
-The [OData Query Option's](1) define a syntax for querying resources. Queries are encoded into a [Query](4) string by combining [Query Options](1) with [Operations](2), [Functions](2), and the name property of the [data](3). Queries are executed with a HTTP.GET to a URI that understands the OData Query Options syntax.
+The [OData Query Options][1] define a syntax for querying resources. Queries are encoded into a [Query][4] string by combining [Query Options][1] with [Operations][2], [Functions][2], and the name property of the [data][3]. Queries are executed with a HTTP.GET to a URI that understands the OData Query Options syntax.
 
-OData functionality beyond the OData Query Options is out of scope of this extension. Specifically a client that recognizes this extension should only assume server compatibility with [OData Uri Conventions - 4.1. System Query Options][1] through [4.9. Inlinecount System Query Option ($inlinecount)](5). 
+OData functionality beyond the OData Query Options is out of scope of this extension. Specifically a client that recognizes this extension should only assume server compatibility with [OData Uri Conventions - 4.1. System Query Options][1] through [4.9. Inlinecount System Query Option ($inlinecount)][5]. 
 
 | OData Uri Conventions (out of scope) |
 |--------------------------------------|
@@ -26,7 +26,7 @@ odata object
 | href | URI  | The url cable of deciding Odata encoded queries | TRUE     |
 | data | data | A collection of data objects                    | FALSE    |
 
-Extension to the [data](3) object
+Extension to the [data][3] object
 ---------------------------------
 
 **Additional Parameter**
@@ -45,7 +45,7 @@ odata-option Object
 | operations | String[] | An array of Odata operations and functions supported by the server                         | FALSE    |
 | values     | String[] | A list of available available values expected by the server for this data object           | FALSE    |
 
-The odata-option object should contain the name of an [odata query option](1). It should also contain a boolean value for the enabled property indicating if the operation is accepted by the href. In the case of the \$filter option a list of acceptable operations and functions can be described. In all cases if the odata-options property is not null, all options must be explicitly enabled. All \$filter operations must be explicitly enabled or be considered disabled by the client.
+The odata-option object should contain the name of an [odata query option][1]. It should also contain a boolean value for the enabled property indicating if the operation is accepted by the href. In the case of the \$filter option a list of acceptable operations and functions can be described. In all cases if the odata-options property is not null, all options must be explicitly enabled. All \$filter operations must be explicitly enabled or be considered disabled by the client.
 
 If the odata-option is not included the client is free to assume any possible odata query is acceptable, but will have to try the query to know for sure.
 
@@ -60,7 +60,7 @@ Example
 }
 ```
 
-The URI http://example.orf/Examples is compatible with OData Query Options. No limitations on the OData Query Options are defined. Clients are free to execute any legal OData query against the resource. Clients should however be aware that some combinations of query may result in an error. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension](6) Extension.
+The URI http://example.orf/Examples is compatible with OData Query Options. No limitations on the OData Query Options are defined. Clients are free to execute any legal OData query against the resource. Clients should however be aware that some combinations of query may result in an error. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension][6] Extension.
 
 Example Including odata-options
 -------------------------------
@@ -96,7 +96,7 @@ Example Including odata-options
 }
 ```
 
-The URI http://example.orf/Examples is compatible with OData Query Options. The server supports: \$orderby, \$top, \$skip, \$select, and \$inlinecount with the 'Name' data property. \$filter is also enabled when using the operations Eq (Equals) and substringof (Contains). \$expand and $format are not enabled. Client should build OData Query Option queries using only the enabled Query Options, Operations, and Functions. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension](6) Extension.
+The URI http://example.orf/Examples is compatible with OData Query Options. The server supports: \$orderby, \$top, \$skip, \$select, and \$inlinecount with the 'Name' data property. \$filter is also enabled when using the operations Eq (Equals) and substringof (Contains). \$expand and $format are not enabled. Client should build OData Query Option queries using only the enabled Query Options, Operations, and Functions. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension][6] Extension.
 
 Simple System Query Options
 ---------------------------
