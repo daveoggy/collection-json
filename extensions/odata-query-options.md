@@ -64,7 +64,7 @@ Example
 }
 ```
 
-The URI http://example.orf/Examples is compatible with OData Query Options. No limitations on the OData Query Options are defined. Clients are free to execute any legal OData query against the resource. Clients should however be aware that some combinations of query may result in an error. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension][6] Extension.
+The URI http://example.orf/Examples is compatible with OData Query Options. No limitations on the OData Query Options are defined. Clients are free to execute any legal OData query against the resource. Clients should however be aware that some queries may result in an error. Clients should expect to handle errors from the server in the form of HTTP error status code or via [Cj Error Extension][6] Extension.
 
 Example Including odata-options
 -------------------------------
