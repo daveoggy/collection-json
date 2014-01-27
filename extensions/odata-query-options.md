@@ -25,7 +25,7 @@ odata object
 
 | Name | Type | Description                                     | Required |
 |------|------|-------------------------------------------------|----------|
-| href | URI  | The url cable of deciding Odata encoded queries | TRUE     |
+| href | URI  | The url cable of decoding OData encoded queries | TRUE     |
 | data | data | A collection of data objects                    | FALSE    |
 
 Extension to the [data][3] object
@@ -44,14 +44,14 @@ odata-option Object
 
 | Name       | Type     | Description                                                                                | Required |
 |------------|----------|--------------------------------------------------------------------------------------------|----------|
-| option     | String   | The name of an Odata Query Option                                                          | TRUE     |
+| option     | String   | The name of an OData Query Option                                                          | TRUE     |
 | enabled    | Boolean  | Is the query option allowed by the server for the parent data object                       | TRUE     |
-| operations | String[] | An array of Odata operations and functions supported by the server                         | FALSE    |
+| operations | String[] | An array of OData operations and functions supported by the server                         | FALSE    |
 | values     | String[] | A list of available available values expected by the server for this data object           | FALSE    |
 
 The odata-option object should contain the name of an [odata query option][1]. It should also contain a boolean value for the enabled property indicating if the operation is accepted by the href. In the case of the \$filter option a list of acceptable operations and functions can be described. In all cases if the odata-options property is not null, all options must be explicitly enabled. All \$filter operations must be explicitly enabled or be considered disabled by the client.
 
-If the odata-option is not included the client is free to assume any possible odata query is acceptable, but will have to try the query to know for sure.
+If the odata-option is not included the client is free to assume any possible OData Query is acceptable, but will have to execute the query to know for sure.
 
 Example
 -------
