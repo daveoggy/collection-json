@@ -21,6 +21,8 @@ odata object
 -------------
 
 **Parameters**
+
+
 | Name | Type | Description                                     | Required |
 |------|------|-------------------------------------------------|----------|
 | href | URI  | The url cable of deciding Odata encoded queries | TRUE     |
@@ -30,6 +32,7 @@ Extension to the [data][3] object
 ---------------------------------
 
 **Additional Parameter**
+
 | Name          | Type          | Description                                     | Required |
 |---------------|---------------|-------------------------------------------------|----------|
 | odata-options | odata-option  | Collection of odata-options                     | FALSE    |
@@ -38,6 +41,7 @@ odata-option Object
 -------------------
 
 **Parameters**
+
 | Name       | Type     | Description                                                                                | Required |
 |------------|----------|--------------------------------------------------------------------------------------------|----------|
 | option     | String   | The name of an Odata Query Option                                                          | TRUE     |
